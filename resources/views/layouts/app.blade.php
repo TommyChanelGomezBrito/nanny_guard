@@ -25,6 +25,9 @@
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cameras.index') }}">Cameras</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('families') }}">Families</a>
                         </li>
                         <li class="nav-item">
