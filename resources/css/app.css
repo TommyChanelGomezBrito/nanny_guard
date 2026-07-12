@@ -45,3 +45,69 @@ a {
         padding: 3rem 0;
     }
 }
+
+.auth-panel {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.08);
+    padding: 2.5rem;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.auth-card-header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.auth-card-header p {
+    margin-bottom: 1.75rem;
+}
+
+.auth-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #334155;
+}
+
+.auth-form .form-control {
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.auth-form .form-control:focus {
+    box-shadow: 0 0 0 0.15rem rgba(59, 130, 246, 0.15);
+}
+
+.auth-note {
+    margin-top: 1.5rem;
+    color: #64748b;
+    text-align: center;
+}
+
+.auth-note a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.auth-note a:hover {
+    text-decoration: underline;
+}
+
+.auth-card .btn-primary {
+    border-radius: 0.85rem;
+    padding: 0.95rem 1.25rem;
+}
