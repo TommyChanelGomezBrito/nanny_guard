@@ -16,11 +16,14 @@ WORKDIR /var/www/html
 # Copy app
 COPY . .
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+# Generate environment and install PHP dependencies
+RUN cp .env.example .env \
+    && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist \
+    && php artisan key:generate --ansi --force \
+    && mkdir -p database \
+    && touch database/database.sqlite
 
 # Expose port
 EXPOSE 8000
 
-# Default command — run migrate at runtime may fail if DB not ready; we keep migrate in CMD
 CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "8000"]
