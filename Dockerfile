@@ -21,7 +21,8 @@ RUN cp .env.example .env \
     && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist \
     && php artisan key:generate --ansi --force \
     && mkdir -p database \
-    && touch database/database.sqlite
+    && touch database/database.sqlite \
+    && php artisan migrate --force
 
 # Expose port
 EXPOSE 8000
