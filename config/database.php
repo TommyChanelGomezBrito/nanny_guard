@@ -3,6 +3,24 @@
 use Illuminate\Support\Str;
 use Pdo\Mysql;
 
+$defaultConnection = env('DB_CONNECTION', 'sqlite');
+
+$placeholderHosts = ['your-db-host', '<DB_HOST>', ''];
+$placeholderDatabases = ['your_db_name', '<DB_NAME>', ''];
+$placeholderUsers = ['your_db_user', '<DB_USER>', ''];
+$placeholderPasswords = ['your_db_pass', '<DB_PASS>', ''];
+
+if ($defaultConnection === 'mysql'
+    && (
+        in_array(env('DB_HOST'), $placeholderHosts, true)
+        || in_array(env('DB_DATABASE'), $placeholderDatabases, true)
+        || in_array(env('DB_USERNAME'), $placeholderUsers, true)
+        || in_array(env('DB_PASSWORD'), $placeholderPasswords, true)
+    )
+) {
+    $defaultConnection = 'sqlite';
+}
+
 return [
 
     /*
